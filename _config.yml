@@ -16,7 +16,7 @@ minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "n
 # Site Author
 author:
   name: "Dongwook Heo"
-  avatar: #"/assets/images/profile.jpg"  # 프로필 이미지 경로
+  avatar: ![Image](https://github.com/user-attachments/assets/bd871efc-2b38-4814-8ea9-90cf63534a30)  # 프로필 이미지 경로
   bio: "Robotics engineer"
   location: "Seoul, Korea"
   email: "hdwook3918@gmail.com"
