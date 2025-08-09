@@ -1,11 +1,11 @@
 ---
-title: "카테고리"
+title: "논문리뷰"
 layout: categories
 permalink: /categories/
 author_profile: true
 ---
 
-논문리뷰 블로그의 카테고리별 포스트를 확인할 수 있습니다.
+논문리뷰 주제별 포스트
 
 ## 주요 카테고리
 
@@ -14,7 +14,7 @@ author_profile: true
 
 ## 최근 포스트
 
-{% assign posts = site.posts | where: "categories", "논문리뷰" %}
+{% assign posts = site.posts | where: "categories", "논문리뷰" | sort: 'date' | reverse %}
 {% for post in posts limit:5 %}
   {% include archive-single.html %}
 {% endfor %}

@@ -7,6 +7,7 @@ categories:
 tags:
   - Map-based Visual Localization
   - Visual Odometry
+layout: single
 use_math: true
 date: 2025-08-09
 last_modified_at: 2025-08-09
