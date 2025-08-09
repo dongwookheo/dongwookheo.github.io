@@ -7,7 +7,7 @@ author_profile: true
 
 Computer Vision 분야의 논문 리뷰를 모아놓은 페이지입니다.
 
-{% assign posts = site.posts | where: "categories", "Computer Vision" %}
+{% assign posts = site.posts | where_exp: "post", "post.categories contains 'Computer Vision'" %}
 {% for post in posts %}
   {% include archive-single.html %}
 {% endfor %}

@@ -3,6 +3,7 @@ title: "[T-PAMI 2015] Map-Based Probabilistic Visual Self-Localization"
 excerpt: "Map-based Visual Localization"
 categories:
   - 논문리뷰
+  - Computer Vision
 tags:
   - Map-based Visual Localization
   - Visual Odometry
