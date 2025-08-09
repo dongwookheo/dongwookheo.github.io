@@ -1,0 +1,661 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.27.3 by Michael Rose
+  Copyright 2013-2025 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="en-US" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[T-PAMI 2015] Map-Based Probabilistic Visual Self-Localization - Keep going!</title>
+<meta name="description" content="Map-based Visual Localization">
+
+
+  <meta name="author" content="Dongwook Heo">
+  
+  <meta property="article:author" content="Dongwook Heo">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Keep going!">
+<meta property="og:title" content="[T-PAMI 2015] Map-Based Probabilistic Visual Self-Localization">
+<meta property="og:url" content="http://0.0.0.0:4000/%EB%85%BC%EB%AC%B8%EB%A6%AC%EB%B7%B0/computer%20vision/pami15-lost/">
+
+
+  <meta property="og:description" content="Map-based Visual Localization">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2025-08-09T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2025-08-09T00:00:00+09:00">
+
+
+
+
+<link rel="canonical" href="http://0.0.0.0:4000/%EB%85%BC%EB%AC%B8%EB%A6%AC%EB%B7%B0/computer%20vision/pami15-lost/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Keep going! Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide" dir="ltr">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Keep going!
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/categories/"
+                
+                
+              >논문리뷰</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/tags/"
+                
+                
+              >태그</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://0.0.0.0:4000/">
+        <img src="/assets/images/profile.jpg" alt="Dongwook Heo" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://0.0.0.0:4000/" itemprop="url">Dongwook Heo</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Robotics engineer</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Seoul, Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://github.com/dongwookheo" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://www.linkedin.com/in/%EB%8F%99%EC%9A%B1-%ED%97%88-851387264/" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span></a></li>
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:hdwook3918@gmail.com" rel="me" class="u-email">
+            <meta itemprop="email" content="hdwook3918@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[T-PAMI 2015] Map-Based Probabilistic Visual Self-Localization">
+    <meta itemprop="description" content="Map-based Visual Localization">
+    <meta itemprop="datePublished" content="2025-08-09T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2025-08-09T00:00:00+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="http://0.0.0.0:4000/%EB%85%BC%EB%AC%B8%EB%A6%AC%EB%B7%B0/computer%20vision/pami15-lost/" itemprop="url">[T-PAMI 2015] Map-Based Probabilistic Visual Self-Localization
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <blockquote>
+  <p>Author: Marcus A. Brubaker; Andreas Geiger; Raquel Urtasun<br />
+July 2015<br />
+T-PAMI [<a href="https://doi.org/10.1109/TPAMI.2015.2453975">DOI</a>] [<a href="https://www.cs.toronto.edu/~mbrubake/projects/map/">CODE</a>]</p>
+</blockquote>
+
+<p><a href="https://youtu.be/xpVxTMJENg4"><img src="http://img.youtube.com/vi/xpVxTMJENg4/0.jpg" alt="Video Label" /></a></p>
+
+<h2 id="서론">서론</h2>
+<p><strong>자율 시스템의 자기 위치 결정의 중요성 및 기존 기술의 한계</strong></p>
+
+<p>자율 시스템에서 정확하고 효율적인 자기 위치 결정은 핵심적인 과제이다. 이 논문은 두 대의 비디오 카메라와 도로 지도를 유일한 입력으로 사용하여 차량의 자기 위치를 파악하는 저렴한 해결책을 제시한다.</p>
+
+<p><strong>기존 기술의 문제점</strong></p>
+<ul>
+  <li><strong>GPS의 한계</strong>: 저렴하지만 신호가 항상 가용하지 않거나, 고층 빌딩, 터널, 전파 방해 등으로 인해 정밀도가 떨어질 수 있다. 이는 자율 장치에 치명적인 결과를 초래할 수 있다.</li>
+  <li><strong>기존 시각 기반 접근 방식</strong>: 대부분 세계의 외관에 대한 방대한 사전 지식을 요구하며, 데이터 유지 및 개인 정보 보호 측면에서 문제가 발생할 수 있다.</li>
+</ul>
+
+<p><strong>본 논문의 기여</strong></p>
+<ul>
+  <li>
+    <p><strong>이전에 보지 못한 장소에서의 위치 파악</strong>: 본 연구는 이전에 한 번도 방문한 적 없는 장소에서도 차량의 위치를 파악할 수 있는 저렴하고 강건한 해결책을 제안한다.</p>
+  </li>
+  <li>
+    <p><strong>OpenStreetMap(OSM) 활용</strong>: 무료로 이용 가능하고 지속적으로 업데이트되는 OSM을 활용하여 비용 효율적인 접근 방식을 가능하게 한다.</p>
+  </li>
+  <li>
+    <p><strong>확률 모델 및 효율적인 추론</strong>: 시각적 주행 거리 측정의 노이즈와 지도 내의 모호성(예: 맨해튼 월드)에 강건하게 대응하는 확률 모델과 효율적인 근사 추론 알고리즘을 제안한다.</p>
+  </li>
+  <li>
+    <p><strong>실시간 성능</strong>: 알고리즘은 분산 컴퓨팅을 활용하여 자율 시스템의 실시간 요구 사항을 충족할 수 있다.</p>
+  </li>
+  <li>
+    <p><strong>정확도</strong>: 2,150km 이상의 도로를 포함하는 지도에서 52초 주행 후 평균 4m 이내의 정확도로 차량을 위치 파악할 수 있음을 입증한다.</p>
+  </li>
+</ul>
+
+<h2 id="visual-localization">Visual Localization</h2>
+<h3 id="확률기반-접근-방식과-지도-표현">확률기반 접근 방식과 지도 표현</h3>
+<p>차량의 자기 위치 결정을 위해 차량의 지붕에 장착된 카메라와 환경의 지도 정보를 활용한다. 지도는 도로와 교차점을 포함하지만, 시각적 외관 정보는 포함하지 않으므로, 차량의 궤적만이 자기 위치 결정에 사용 가능한 유일한 정보이다. 이를 위해 시각적 주행 거리 측정 (visual odometry)이 활용된다.</p>
+
+<p><strong>확률적 자기 위치 결정</strong>:
+시각적 주행 거리 측정의 적분은 드리프트를 유발하여 대규모 지도에서 직접적인 형태 매칭을 어렵게 한다. 따라서 본 논문은 시각적 주행 거리 측정값을 사용하여 차량의 순간적인 위치와 방향을 결정하는 확률적 접근 방식을 제안한다.</p>
+
+<p align="center">
+  <img src="/assets/images/pami15_lost/img2.png" alt="map" style="width: 80%;" />
+</p>
+
+<p><strong>지도 표현</strong>:
+지도는 방향성 그래프 (directed graph)로 표현되며, 노드는 도로 구간을, 엣지는 이들 구간의 연결성을 정의한다.
+모든 도로 구간은 선형 또는 원호세그먼트로 표현되며, 다음 매개변수들로 정의된다.
+교차로는 원형 호로 ‘부드럽게’ 처리되어 차선 기반의 지도 표현을 얻는다.</p>
+
+<p align="center">
+  <img src="/assets/images/pami15_lost/img3.png" alt="map" style="width: 80%;" />
+</p>
+
+<p><strong>도로 구간 모델링</strong>:
+모든 도로 구간은 선형 또는 원호세그먼트로 표현되며, 다음 매개변수들로 정의된다.</p>
+<ul>
+  <li>시작점 ($p_0$), 끝점 ($p_1$)</li>
+  <li>길이 ($\ell$)</li>
+  <li>초기 방향 ($\beta$)</li>
+  <li>곡률 ($\alpha$): 선형 세그먼트의 경우 $\alpha=0$이며, 원호세그먼트의 경우 $\alpha = \frac{\psi_1 - \psi_0}{\ell}$ (여기서 $\psi_0, \psi_1$은 시작 및 끝 각도)</li>
+</ul>
+
+<p><strong>차량 상태 및 전역 위치/방향 계산</strong>:
+차량의 상태는 주행 중인 도로 구간 ($u$), 해당 구간 시작점으로부터의 거리 ($d$), 지역 도로 방향에 대한 차량의 각도 오프셋 ($\theta$)으로 정의된다.</p>
+<ul>
+  <li><strong>전역 방향</strong>: $\bar{\theta} = \theta + \beta + \alpha d$</li>
+  <li><strong>전역 위치</strong>:
+    <ul>
+      <li>선형 세그먼트: $\bar{p} = p_0 + \frac{d}{\ell}(p_1 - p_0)$</li>
+      <li>원호세그먼트: $\bar{p} = c + r d(\psi_0 + \frac{d}{\ell}(\psi_1 - \psi_0))$ (여기서 $c$는 원의 중심, $r$은 반지름, $d(\psi) = (\cos\psi, \sin\psi)^\top$)</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="상태-공간-및-추론-알고리즘">상태 공간 및 추론 알고리즘</h3>
+<p>차량의 움직임은 이산 시간 모델로 표현되며, 상태 $x_t = (u_t, s_t)$는 현재 도로 구간 ($u_t$)과 해당 구간 내의 상태 ($s_t = (d_t, \dot{d}_t, \theta_t, \dot{\theta}_t)$)를 포함한다.</p>
+
+<p><strong>상태 전이 모델</strong>: $p(x_t|x_{t-1}) = p(u_t|x_{t-1})p(s_t|u_t, x_{t-1})$</p>
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>상태 전이 분포는 선형 변환에 가우시안 노이즈가 더해진 형태로 가정된다: $p(s_t</td>
+          <td>u_t, x_{t-1}) = \mathcal{N}(s_t</td>
+          <td>A_{u_t,u_{t-1}}s_{t-1} + b_{u_t,u_{t-1}}, \Sigma_{s_{u_t}})$</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li><strong>거리 변화 모델</strong>: 2차, 상수 속도 모델 ($d_t = d_{t-1} + (\dot{d}<em>{t-1} - \dot{d}</em>{t-2})$)</li>
+  <li><strong>각도 변화 모델</strong>: 1차 자기회귀 모델(AR(1)) ($\theta_t = \gamma_{u_t}\theta_{t-1}$)</li>
+</ul>
+
+\[\mathbf{A}_{u_t,u_{t-1}} = \begin{bmatrix} 2 &amp; -1 &amp; 0 &amp; 0 \\ 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; \gamma_{u_t} &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{bmatrix}\]
+
+\[\mathbf{b}_{u_t,u_{t-1}} = \begin{cases} -(\ell_{u_t}^{-1}, \ell_{u_t}^{-1}, 0, \theta_{u_t,u_{t-1}})^\top &amp; u_t \neq u_{t-1} \\ (0,0,0,0)^\top &amp; u_t = u_{t-1} \end{cases}\]
+
+<p>$\theta_{u_t,u_{t-1}}$는 이전 도로 구간의 끝과 현재 도로 구간의 시작 사이의 각도이다.</p>
+
+<p><strong>추론 알고리즘</strong>: 필터링 분포 $p(x_t|y_{1:t})$는 예측 단계와 업데이트 단계로 나뉘어 재귀적으로 계산된다.</p>
+<ul>
+  <li><strong>예측 단계</strong>:
+    <ul>
+      <li>대부분의 경우, 전이 확률의 시그모이드 형태 때문에 분석적 근사 (analytic approximation)가 사용된다.</li>
+      <li>전이 확률의 변곡점 근처에서 모드가 겹치면 몬테카를로 근사 (Monte Carlo approximation)를 통해 정확도를 유지한다.</li>
+    </ul>
+  </li>
+  <li><strong>업데이트 단계</strong>: 예측된 모드에 관측 $y_t$를 반영하여 업데이트한다. 이는 가우시안 밀도를 곱하는 것과 유사하며, 칼만 필터의 업데이트와 유사한 방식으로 진행된다.</li>
+  <li><strong>후방 분포 복잡도 관리</strong>:
+    <ul>
+      <li>후방 분포의 혼합 성분 수가 지수적으로 증가하는 것을 막기 위해 세 가지 근사화를 사용한다.</li>
+      <li><strong>모드 병합</strong>: 유사한 모드들을 단일 성분으로 병합한다.</li>
+      <li><strong>가지치기</strong>: 확률이 임계값 이하인 도로의 혼합 성분들을 제거한다.</li>
+      <li><strong>혼합 모델 단순화 (GMM simplification)</strong>: 혼합 성분 수가 너무 많아질 때, KL 발산(Kullback-Leibler divergence)을 특정 임계값($\epsilon$) 이하로 유지하면서 성분들을 제거하거나 업데이트하는 절차를 수행한다.
+        <ul>
+          <li>
+            <table>
+              <tbody>
+                <tr>
+                  <td>KL 발산 상한은 $D(f</td>
+                  <td> </td>
+                  <td>g) \le \hat{D}(\phi, \psi, M, M’)$으로 주어진 변분 파라미터($\phi, \psi$)로 최소화된다.</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li>단순화된 GMM의 각 성분 파라미터는 다음 식을 통해 반복적으로 업데이트된다:</li>
+        </ul>
+
+\[\mu_b = \frac{\sum_a \phi_{a,b}\mu_a}{\sum_a \phi_{a,b}}\]
+
+\[\Sigma_b = \frac{\sum_a \phi_{a,b}(\Sigma_a + (\mu_a - \mu_b)(\mu_a - \mu_b)^\top)}{\sum_a \phi_{a,b}}\]
+      </li>
+    </ul>
+  </li>
+  <li><strong>병렬 처리</strong>: 이 알고리즘은 병렬 처리가 가능하도록 설계되어 실시간 성능을 달성한다.</li>
+</ul>
+
+<h2 id="실험-평가">실험 평가</h2>
+<p>제안된 위치 결정 방법은 KITTI 시각 주행 거리 측정 데이터셋을 사용하여 평가된다.</p>
+
+<p><strong>실험 설정</strong></p>
+<ul>
+  <li>KITTI 데이터셋의 11개 훈련 시퀀스를 활용했다.</li>
+  <li>LIBVISO2 라이브러리를 통해 모노큘러 및 스테레오 시각 주행 거리 측정값을 계산했다.</li>
+  <li>계산 시간 단축을 위해 시각 주행 거리 측정값은 초당 1프레임으로 서브샘플링되었다.</li>
+</ul>
+
+<p><strong>평가 지표</strong>: 위치 및 방향 오차는 시스템이 ‘localized’된 후 (후방 분포가 10초 이상 단일 모드를 유지) 계산된다.</p>
+<ul>
+  <li><strong>오라클 (oracle) 오차</strong>: GPS 데이터를 지도에 투영하여 계산된 재투영 오차로, 주어진 지도 데이터로 달성 가능한 최상의 오차를 나타낸다.</li>
+</ul>
+
+<p>아래는 정량 평가 결과 (Table 1)이다.</p>
+
+<p align="center">
+  <img src="/assets/images/pami15_lost/img4.png" alt="table1" style="width: 80%;" />
+</p>
+
+<p>스테레오 시각 주행 거리 측정 결과는 오라클 오차의 표준 편차(±2.2m) 범위 내에 있어, 지도 및 GPS 데이터의 부정확성으로 인한 이론적 한계에 근접한 성능을 보여준다.
+모노큘러 주행 거리 측정은 시퀀스 01(고속도로 고속 주행) 및 08(이상치 발생)에서 누적 오차로 인해 성능이 좋지 않았다.</p>
+
+<p><strong>식별 가능한 시퀀스 분석</strong>:</p>
+<ul>
+  <li><strong>모호한 시퀀스 (04, 06)</strong>: 짧은 직선 도로(04) 또는 대칭 경로(06)는 근본적인 모호성으로 인해 위치 파악이 불가능했다.</li>
+  <li><strong>빠르게 위치 파악되는 시퀀스 (02, 10)</strong>: 곡선 도로를 통과하여 빠르게 고유하게 식별되었다.</li>
+  <li><strong>오래 걸리는 시퀀스 (01, 08)</strong>: 긴 직선 구간은 위치 파악이 어렵다.</li>
+</ul>
+
+<p><strong>단순화 임계값 ($\epsilon$) 영향</strong>:</p>
+<ul>
+  <li>$\epsilon$이 커질수록 계산 시간은 감소하고 오차는 증가한다.</li>
+  <li>$\epsilon = 10^{-2}$ nats에서 계산 시간과 오차 간의 균형이 가장 좋았다.</li>
+</ul>
+
+<p><strong>지도 크기 영향</strong>: 초기 영역 크기가 작을수록 위치 파악 시간이 빠르지만, 일정 크기(약 2km²) 이상에서는 지도 크기가 위치 파악 시간에 미치는 영향이 미미해졌다.</p>
+
+<p><strong>노이즈에 대한 강인성</strong>: GPS 기반 주행 거리 측정값에 가우시안 노이즈를 추가한 결과, SNR(신호 대 잡음비)이 1 이하로 떨어지기 전까지는 오차 변화가 작아 성능이 노이즈에 강인함을 보여준다.</p>
+
+<h2 id="결론">결론</h2>
+<p>이 논문은 카메라와 크라우드소싱 기반의 무료 온라인 지도를 활용한 자기 위치 결정접근 방식을 제시한다.</p>
+
+<p><strong>연구의 의의</strong>:</p>
+<ul>
+  <li>고속도로, 교외, 혼잡한 도시 등 다양한 시나리오에서 성공적으로 적용되었다.</li>
+  <li>KITTI 벤치마크에서 평균 4m의 정밀도로 1분 이내에 차량 위치를 파악하는 뛰어난 성능을 입증했다.</li>
+</ul>
+
+<p><strong>향후 연구 방향</strong>:</p>
+<ul>
+  <li><strong>노이즈 모델 개선</strong>: 모노큘러 주행 거리 측정에서 주기적으로 발생하는 큰 이상치(outlier)를 고려하여, 관측 노이즈의 heavy-tailed 특성을 다루는 모델 확장을 통해 강인성을 향상시킬 수 있다.</li>
+  <li><strong>추가 시각적 단서 통합</strong>: OpenStreetMap에 포함된 속도 제한, 도로명 등 추가적인 시각적 단서를 활용하여 위치 결정 정확도를 더욱 높일 수 있다.</li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#map-based-visual-localization" class="page__taxonomy-item p-category" rel="tag">Map-based Visual Localization</a><span class="sep">, </span>
+    
+      <a href="/tags/#visual-odometry" class="page__taxonomy-item p-category" rel="tag">Visual Odometry</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#computer-vision" class="page__taxonomy-item p-category" rel="tag">Computer Vision</a><span class="sep">, </span>
+    
+      <a href="/categories/#%EB%85%BC%EB%AC%B8%EB%A6%AC%EB%B7%B0" class="page__taxonomy-item p-category" rel="tag">논문리뷰</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2025-08-09">August 9, 2025</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  <h4 class="page__share-title">Share on</h4>
+
+  <a href="https://x.com/intent/tweet?text=%5BT-PAMI+2015%5D+Map-Based+Probabilistic+Visual+Self-Localization%20http%3A%2F%2F0.0.0.0%3A4000%2F%25EB%2585%25BC%25EB%25AC%25B8%25EB%25A6%25AC%25EB%25B7%25B0%2Fcomputer%2520vision%2Fpami15-lost%2F" class="btn btn--x" aria-label="Share on X" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on X">
+    <i class="fab fa-fw fa-x-twitter" aria-hidden="true"></i><span> X</span>
+  </a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F0.0.0.0%3A4000%2F%25EB%2585%25BC%25EB%25AC%25B8%25EB%25A6%25AC%25EB%25B7%25B0%2Fcomputer%2520vision%2Fpami15-lost%2F" class="btn btn--facebook" aria-label="Share on Facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook">
+    <i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span>
+  </a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://0.0.0.0:4000/%EB%85%BC%EB%AC%B8%EB%A6%AC%EB%B7%B0/computer%20vision/pami15-lost/" class="btn btn--linkedin" aria-label="Share on LinkedIn" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn">
+    <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span>
+  </a>
+
+  <a href="https://bsky.app/intent/compose?text=%5BT-PAMI+2015%5D+Map-Based+Probabilistic+Visual+Self-Localization%20http%3A%2F%2F0.0.0.0%3A4000%2F%25EB%2585%25BC%25EB%25AC%25B8%25EB%25A6%25AC%25EB%25B7%25B0%2Fcomputer%2520vision%2Fpami15-lost%2F" class="btn btn--bluesky" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Bluesky">
+    <i class="fab fa-fw fa-bluesky" aria-hidden="true"></i><span> Bluesky</span>
+  </a>
+</section>
+
+
+      
+
+    </div>
+
+    
+      
+        <p>
+          Comments are configured with provider: <strong>disqus</strong>,
+          but are disabled in non-production environments.
+        </p>
+      
+    
+  </article>
+
+  
+  
+    
+<div class="page__related">
+  
+  <h2 class="page__related-title">You May Also Enjoy</h2>
+  <div class="grid__wrapper">
+    
+      
+  </div>
+</div>
+
+  
+</div>
+
+      
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        
+
+<div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+
+<div class="page__footer-copyright">&copy; 2025 <a href="http://0.0.0.0:4000">Keep going!</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://0.0.0.0:4000/%EB%85%BC%EB%AC%B8%EB%A6%AC%EB%B7%B0/computer%20vision/pami15-lost/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/%EB%85%BC%EB%AC%B8%EB%A6%AC%EB%B7%B0/computer%20vision/pami15-lost"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://your-disqus-shortname.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+  </body>
+</html>

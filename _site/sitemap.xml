@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>http://0.0.0.0:4000/%EB%85%BC%EB%AC%B8%EB%A6%AC%EB%B7%B0/computer%20vision/pami15-lost/</loc>
+<lastmod>2025-08-09T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://0.0.0.0:4000/_posts/%EB%85%BC%EB%AC%B8%EB%A6%AC%EB%B7%B0/2025-08-09-pami15-lost/</loc>
+<lastmod>2025-08-09T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://0.0.0.0:4000/about/</loc>
+</url>
+<url>
+<loc>http://0.0.0.0:4000/categories/</loc>
+</url>
+<url>
+<loc>http://0.0.0.0:4000/categories/%EB%85%BC%EB%AC%B8%EB%A6%AC%EB%B7%B0/computer-vision/</loc>
+</url>
+<url>
+<loc>http://0.0.0.0:4000/</loc>
+</url>
+<url>
+<loc>http://0.0.0.0:4000/categories/%EB%85%BC%EB%AC%B8%EB%A6%AC%EB%B7%B0/robotics/</loc>
+</url>
+<url>
+<loc>http://0.0.0.0:4000/tags/</loc>
+</url>
+</urlset>
