@@ -2,21 +2,22 @@
 locale: "en-US"
 title: "Keep going!"
 title_separator: "-"
-subtitle: # No subtitle
+subtitle: # site tagline that appears below site title in masthead
 name: "dongwookheo"
 description: "Span linearly, life is a marathon."
-url: "https://dongwookheo.github.io"  # 본인의 username으로 변경
+url: "https://dongwookheo.github.io"
 baseurl: ""
-repository: "dongwookheo/dongwookheo.github.io"  # 본인의 저장소명으로 변경
+repository: "dongwookheo/dongwookheo.github.io"
 
-# Theme Settings
-remote_theme: "mmistakes/minimal-mistakes"
-minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+# Theme Settings - 이 부분 수정!
+# theme                  : "minimal-mistakes-jekyll"
+remote_theme           : "mmistakes/minimal-mistakes"
+minimal_mistakes_skin    : "default"
 
 # Site Author
 author:
   name: "Dongwook Heo"
-  avatar: "assets/images/profile.jpg"  # 프로필 이미지 경로
+  avatar: # path of avatar image
   bio: "Robotics engineer"
   location: "Seoul, Korea"
   email: "hdwook3918@gmail.com"
@@ -28,18 +29,16 @@ author:
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/%EB%8F%99%EC%9A%B1-%ED%97%88-851387264/"
 
-# Site Footer
-footer:
-  links:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      # url: "https://github.com/username"
+# Comments Settings
+comments:
+  provider: "disqus"
+  disqus:
+    shortname: "dongwookheo-blog"
 
 # Reading Files
 include:
   - .htaccess
   - _pages
-  - _posts
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
@@ -65,9 +64,11 @@ exclude:
   - Rakefile
   - README
   - tmp
+
 keep_files:
   - .git
   - .svn
+
 encoding: "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
@@ -78,7 +79,7 @@ lsi: false
 excerpt_separator: "\n\n"
 incremental: false
 
-# Markdown Processing
+# Markdown Processing - 이 부분 수정!
 kramdown:
   input: GFM
   hard_wrap: false
@@ -88,7 +89,7 @@ kramdown:
   toc_levels: 1..6
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
-  math_engine: mathjax
+  # math_engine 설정 제거!
 
 # Sass/SCSS
 sass:
@@ -109,7 +110,7 @@ plugins:
   - jekyll-feed
   - jekyll-include-cache
 
-# mimic GitHub Pages with --safe
+# 이 부분도 추가 (GitHub Pages 호환성)
 whitelist:
   - jekyll-paginate
   - jekyll-sitemap
@@ -120,7 +121,7 @@ whitelist:
 # Archives
 category_archive:
   type: liquid
-  path: /categories/
+  path: /posts/
 tag_archive:
   type: liquid
   path: /tags/
@@ -140,26 +141,9 @@ defaults:
     values:
       layout: single
       author_profile: true
-      read_time: true
+      read_time: false
       comments: true
-      share: true
+      share: false
       related: true
-  # _pages
-  - scope:
-      path: "_pages"
-      type: pages
-    values:
-      layout: single
-      author_profile: true
-
-# Comments (선택사항)
-comments:
-  provider: "disqus"
-  disqus:
-    shortname: "your-disqus-shortname"  # Disqus 사용시 변경
-
-# Analytics (선택사항)
-analytics:
-  provider: "google-gtag"
-  google:
-    tracking_id: "G-XXXXXXXXXX"  # Google Analytics 사용시 변경
+      toc: true
+      toc_sticky: true
