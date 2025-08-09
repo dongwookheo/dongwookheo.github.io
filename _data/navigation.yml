@@ -1,11 +1,13 @@
 # 메인 네비게이션
 main:
-  - title: "Paper Review"
-    url: /categories/논문리뷰/
+  - title: "논문리뷰"
+    url: /categories/
     children:
       - title: "Computer Vision"
-        url: /categories/논문리뷰/CV/
+        url: /categories/논문리뷰/computer-vision/
       - title: "Robotics"
-        url: /categories/논문리뷰/RO/
-  - title: "Tags"
+        url: /categories/논문리뷰/robotics/
+  - title: "카테고리"
+    url: /categories/
+  - title: "태그"
     url: /tags/
